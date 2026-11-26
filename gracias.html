@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Plaza confirmada · Los cinco sentidos de diciembre</title>
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;1,300&family=Heebo:wght@300;500&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#4A0A14;--blush:#E9AFA6;--black:#0F0D0C}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--wine);color:#fff;font:300 16px/1.7 'Heebo',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 22px}
+.box{max-width:620px;text-align:center}
+.label{font:500 10.5px/1.4 'Heebo',sans-serif;letter-spacing:.26em;text-transform:uppercase;opacity:.75}
+h1{font:300 clamp(44px,7vw,76px)/1 'Cormorant',Georgia,serif;margin:18px 0 10px}
+h1 em{font-style:italic;color:var(--blush)}
+.lead{font-size:18px;opacity:.9;margin:0 0 40px}
+dl{display:grid;grid-template-columns:110px 1fr;gap:12px 18px;text-align:left;margin:0 auto 40px;max-width:440px;padding-top:24px;border-top:1px solid rgba(255,255,255,.2)}
+dt{font:500 10px/2.2 'Heebo',sans-serif;letter-spacing:.22em;text-transform:uppercase;opacity:.65}
+dd{margin:0;font-size:16px}
+a.btn{display:inline-block;padding:16px 32px;border:1px solid #fff;color:#fff;text-decoration:none;font:500 12px/1 'Heebo',sans-serif;letter-spacing:.22em;text-transform:uppercase;transition:background .3s,color .3s}
+a.btn:hover{background:#fff;color:var(--wine)}
+.inv{margin:10px auto 44px;max-width:440px;text-align:left;padding:30px 28px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16)}
+.inv p{margin:8px 0 18px;font-size:14.5px;opacity:.88}
+.inv label{display:block;font:500 9.5px/1.6 'Heebo',sans-serif;letter-spacing:.2em;text-transform:uppercase;opacity:.75;margin-bottom:12px}
+.inv input:not([type=checkbox]){display:block;width:100%;margin-top:3px;padding:8px 0;border:0;border-bottom:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;font:300 16px 'Heebo',sans-serif;outline:none}
+.inv input:focus{border-bottom-color:#fff}
+.inv .two{display:grid;grid-template-columns:1fr 1.4fr;gap:16px}
+.inv .ck{display:flex;gap:10px;text-transform:none;letter-spacing:0;font:300 12.5px/1.45 'Heebo',sans-serif;margin:16px 0 20px;opacity:.9}
+.inv .ck input{accent-color:#E9AFA6;margin-top:2px}
+.inv button.btn{width:100%;background:#fff;color:var(--wine);border:1px solid #fff;cursor:pointer;padding:16px;font:500 12px/1 'Heebo',sans-serif;letter-spacing:.22em;text-transform:uppercase}
+.inv .ok{font:300 italic 20px/1.4 'Cormorant',serif;color:var(--blush)}
+a.btn.ghost{opacity:.85}
+footer{background:var(--black);padding:22px;text-align:center;font-size:12px;letter-spacing:.1em;opacity:.85}
+footer a{color:#fff}
+</style>
+</head>
+<body>
+<main>
+  <div class="box">
+    <div class="label">Plaza confirmada</div>
+    <h1>Gracias, nos vemos <em>el 12 de diciembre</em></h1>
+    <p class="lead">Tu plaza para Los cinco sentidos de diciembre está reservada. En unos minutos recibirás el recibo de pago por email.</p>
+    <dl>
+      <dt>Fecha</dt><dd>Sábado 12 de diciembre de 2026</dd>
+      <dt>Llegada</dt><dd>10:00 h</dd>
+      <dt>Lugar</dt><dd>PremiumArt · Carrer de Bailèn 119, Barcelona</dd>
+      <dt>Trae</dt><dd>Ropa cómoda para moverte, a ser posible en un solo tono (evita colores llamativos)</dd>
+      <dt>Dudas</dt><dd>info@premiumart.com</dd>
+    </dl>
+    <section class="inv" id="factura">
+      <div class="label">¿Necesitas factura?</div>
+      <p>Déjanos tus datos de facturación y te la enviamos por email.</p>
+      <form id="fx" action="https://formsubmit.co/info@premiumart.com" method="POST">
+        <input type="hidden" name="_subject" value="Factura · Los cinco sentidos de diciembre">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_next" id="fx-next" value="">
+        <label>Email usado en la compra<input type="email" name="email" required autocomplete="email"></label>
+        <label>Nombre o razón social<input name="Nombre_o_razon_social" required></label>
+        <label>NIF / CIF<input name="NIF_CIF" required></label>
+        <label>Dirección fiscal<input name="Direccion" required autocomplete="street-address"></label>
+        <div class="two"><label>Código postal<input name="CP" required autocomplete="postal-code"></label><label>Ciudad<input name="Ciudad" required autocomplete="address-level2"></label></div>
+        <label class="ck"><input type="checkbox" required> Acepto que PremiumArt use estos datos solo para emitir mi factura.</label>
+        <button class="btn" type="submit">Solicitar factura</button>
+      </form>
+      <p class="ok" id="fx-ok" hidden>Recibido. Te enviaremos la factura por email en los próximos días.</p>
+    </section>
+    <a class="btn ghost" href="./">Volver a la experiencia</a>
+  </div>
+</main>
+<footer>PremiumArt · <a href="https://www.instagram.com/premiumart.art/">@premiumart.art</a></footer>
+<script>
+(function(){
+  var nx=document.getElementById('fx-next'); nx.value=location.href.split('#')[0].split('?')[0]+'?factura=ok#factura';
+  if(/[?&]factura=ok/.test(location.search)){document.getElementById('fx').hidden=true;document.getElementById('fx-ok').hidden=false;}
+})();
+</script>
+</body>
+</html>
